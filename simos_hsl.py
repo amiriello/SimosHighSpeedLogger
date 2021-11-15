@@ -425,13 +425,13 @@ class hsl_logger:
         self.activityLogger.debug("In the ECU Polling thread")
         self.logFile = None
         self.stopTime = None
-        self.activityLogger.debug("Sending notification email")
+        #self.activityLogger.debug("Sending notification email")
 
-        if "notification" in self.configuration:
-            self.notificationEmail(
-                self.configuration["notification"],
-                "Sucessfully connected to ECU, starting logger process.\nValues will be written to a log file when cruise control is active",
-            )
+        #if "notification" in self.configuration:
+            #self.notificationEmail(
+            #    self.configuration["notification"],
+            #   "Sucessfully connected to ECU, starting logger process.\nValues will be written to a log file when cruise control is active",
+        #    )
 
         self.activityLogger.info("Starting the ECU poller")
 
