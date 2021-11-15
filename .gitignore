@@ -6,3 +6,5 @@ logs
 config.yaml
 dist
 .flaskenv
+.vscode/launch.json
+activity_20211113-220408.log
