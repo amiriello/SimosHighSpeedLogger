@@ -427,11 +427,11 @@ class hsl_logger:
         self.stopTime = None
         #self.activityLogger.debug("Sending notification email")
 
-        #if "notification" in self.configuration:
-            #self.notificationEmail(
-            #    self.configuration["notification"],
-            #   "Sucessfully connected to ECU, starting logger process.\nValues will be written to a log file when cruise control is active",
-        #    )
+        if "notification" in self.configuration:
+            self.notificationEmail(
+                self.configuration["notification"],
+               "Sucessfully connected to ECU, starting logger process.\nValues will be written to a log file when cruise control is active",
+            )
 
         self.activityLogger.info("Starting the ECU poller")
 
@@ -453,7 +453,7 @@ class hsl_logger:
             if self.logFile:
                 self.logFile.flush()
 
-            time.sleep(0.05)
+            #time.sleep(0.05) #10hz Limit
 
     def getParams3E(self):
         for address in self.payload:
